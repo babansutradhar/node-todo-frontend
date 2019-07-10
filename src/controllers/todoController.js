@@ -13,7 +13,7 @@ exports.health_check = function(req, res) {
 exports.todo_list = function(req, res) {
 
 	var filter = {}
-	if(req.query) {
+	ifs(req.query) {
 		if(req.query.description) filter.description = req.query.description
 	}
 	new TodoApi().getList( filter )
