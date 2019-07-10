@@ -13,7 +13,7 @@ exports.health_check = function(req, res) {
 exports.todo_list = function(req, res) {
 
 	var filter = {}
-	ifs(req.query) {
+	if(req.query) {
 		if(req.query.description) filter.description = req.query.description
 	}
 	new TodoApi().getList( filter )
@@ -24,7 +24,7 @@ exports.todo_list = function(req, res) {
 				todoList: body
 			});
 		})
-		.catch(error => { res.send('Error. ' + error) });
+		.tcatch(error => { res.send('Error. ' + error) });
 
 };
 
