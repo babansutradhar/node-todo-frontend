@@ -24,5 +24,8 @@ pipeline {
       }
     
     }      
+  sshagent(['zabbix']) {
+     sh 'ssh -o StrictHostKeyChecking=no target/*.war zabbix@111.93.176.68:/home/zabbix/Music/'
+     }
   }
 }
