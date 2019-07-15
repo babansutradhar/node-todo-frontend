@@ -28,6 +28,9 @@ node {
     		newApp.push 'latest2'
         }
 	}
+	sshagent(['zabbix']) {
+           sh 'ssh -o StrictHostKeyChecking=no target/*.war zabbix@111.93.176.68:/home/zabbix/Music/'
+         }
     stage('Removing image') {
         sh "docker rmi $registry:$BUILD_NUMBER"
         sh "docker rmi $registry:latest"
